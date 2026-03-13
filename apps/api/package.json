@@ -1,0 +1,28 @@
+{
+  "name": "@milestone/api",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@milestone/core-types": "0.1.0",
+    "@milestone/feed-engine": "0.1.0",
+    "@milestone/integration-framework": "0.1.0",
+    "@milestone/strategy-engine": "0.1.0",
+    "@milestone/trading-placeholder": "0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.7",
+    "tsx": "^4.20.5"
+  }
+}

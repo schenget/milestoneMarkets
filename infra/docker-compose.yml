@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: infra/docker/api.Dockerfile
+    environment:
+      - PORT=8080
+      - JWT_SECRET=change-me
+    ports:
+      - "8080:8080"
+
+  web:
+    build:
+      context: ..
+      dockerfile: infra/docker/web.Dockerfile
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+  admin:
+    build:
+      context: ..
+      dockerfile: infra/docker/admin.Dockerfile
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api:8080
+    ports:
+      - "3001:3001"
+    depends_on:
+      - api
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: milestone
+      POSTGRES_PASSWORD: milestone
+      POSTGRES_DB: milestone_markets
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"

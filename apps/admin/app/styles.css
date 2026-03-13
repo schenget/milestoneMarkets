@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 210 40% 98%;
+    --color-foreground: 222 54% 14%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 222 54% 14%;
+    --color-primary: 223 86% 20%;
+    --color-primary-foreground: 210 40% 98%;
+    --color-secondary: 210 24% 85%;
+    --color-secondary-foreground: 222 54% 14%;
+    --color-muted: 210 35% 95%;
+    --color-muted-foreground: 216 18% 45%;
+    --color-accent: 44 91% 53%;
+    --color-accent-foreground: 223 86% 20%;
+    --color-destructive: 0 74% 46%;
+    --color-destructive-foreground: 0 0% 98%;
+    --color-border: 210 28% 86%;
+    --color-input: 210 28% 86%;
+    --color-ring: 44 91% 53%;
+    --radius: 0.85rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), "Avenir Next", "Segoe UI", sans-serif;
+    background-image: radial-gradient(circle at 14% 14%, rgba(250, 221, 143, 0.2), transparent 38%),
+      radial-gradient(circle at 84% 8%, rgba(127, 163, 198, 0.22), transparent 34%);
+  }
+}
